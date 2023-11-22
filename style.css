@@ -1,3 +1,30 @@
 #clock {
     color: red;
 }
+
+.leaf{
+    background-color: green;
+    height: 40px;
+    width: 40px;
+    transform: rotate(20deg);
+    border-radius: 250px 0;
+
+    position: absolute;    
+
+    animation-name: fall;
+    /* animation-delay: 1s; */
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fall{
+    From{
+        transform: translateY(0px) rotate(0deg);
+        background-color: green;
+    }
+    To{
+        transform: translateY(150px) rotate(40deg);
+        background-color: black;
+    }
+  }

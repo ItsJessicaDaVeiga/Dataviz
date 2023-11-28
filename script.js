@@ -1,4 +1,4 @@
-getNews('fr', 'general', 5)
+// getNews('fr', 'general', 5)
 
 // récupérer le bouton
 const searchButton = document.getElementById('searchBtn');

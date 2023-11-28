@@ -57,3 +57,39 @@ const generateLeaf = () => {
 let count = 1;
 // on fait apparaître une nouvelle feuille toutes les secondes
 const intervalId = setInterval(generateLeaf,800);
+
+// Importe le module `fetch`
+async function  getNews () {  
+
+    //let fetch = require('fetch');
+    
+    // Définit l'URL de la requête
+    const url = 'https://newsapi.org/v2/top-headlines?country=fr&apiKey=649cd1a3c1414df0b5122d5ce6fb6ab2';
+    
+    // Exécute la requête HTTP
+    const response = await fetch(url);
+    //console.log(response);
+    // Vérifie si la réponse est valide
+    //if (!response.ok) {
+     // throw new Error(response.statusText);
+    //}
+      
+    // Convertit la réponse en JSON
+    let data = await response.json();
+    //console.log(data.articles[0].title);
+    for(let i =0; i< 5;i++){
+        console.log(data.articles[i].title); 
+    }}
+    getNews()
+
+    
+    
+    
+    // Affiche les résultats
+    //console.log(data);
+    
+    
+    
+
+
+    

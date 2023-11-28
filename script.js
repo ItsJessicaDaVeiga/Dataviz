@@ -1,6 +1,5 @@
-
-let category = "business";
-let country = 'fr'
+let country = 'de'
+let category = "general";
 
 getNews(country, category)
 
@@ -8,21 +7,24 @@ getNews(country, category)
 async function  getNews (country, category) {
     // Définit l'URL de la requête
     // const url = 'https://newsapi.org/v2/top-headlines?country=fr&apiKey=649cd1a3c1414df0b5122d5ce6fb6ab2';
-    var url = `https://newsapi.org/v2/top-headlines?` +
-    // `country=${country}&` +
-    `country=${country}&` +
-    `category=${category}&` +
-    `apiKey=23ae4e8637224dbbb71b47ae3402dd65`;
+    let url = `https://newsapi.org/v2/top-headlines?`
+    
+    // adapter la requête API en fonction de l'input de l'utilisateur
+    url += `country=${country}&`
+    if (category !== 'general'){
+        url += `category=${category}&`
+    }
+    url += `apiKey=23ae4e8637224dbbb71b47ae3402dd65`;
 
-    console.log(url)
     // Exécute la requête HTTP
     const response = await fetch(url);
 
     console.log(response)
     // Convertit la réponse en JSON
     let data = await response.json();
+    console.log(data);
     console.log(data.articles);
-
+    
     // afficher dans le HTML
     displayList(data.articles)
 
@@ -43,19 +45,21 @@ function displayList(listArticles){
         }
 }
 
+// récupérer le bouton
+const searchButton = document.getElementById('searchBtn');
 
-const searchInput = document.getElementById('countries');
-const searchButton = document.getElementById('searchButton');
 
-searchButton.addEventListener('search', function() {
-  // Get the search term from the input
-  const searchInput = searchInput.value;
+searchButton.addEventListener('click', function() {
+    // récupérer l'input "pays"
+    const countryInput = document.getElementById('countries').value;
+    // récupérer l'input "catégorie"
+    const categoryInput = document.getElementById('categories').value;
 
-  // Display the search term in the console
-  console.log(countrie);
+    // on vérifie que l'élément a bien été récupéré
+    console.log(countryInput);
+    console.log(categoryInput);
+
+    // afficher la liste des résultats en fonction de ces données
+    getNews(countryInput, categoryInput);
+    
 });
-
-
-
-    // Affiche les résultats
-    //console.log(data);

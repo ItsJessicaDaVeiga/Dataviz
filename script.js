@@ -44,5 +44,18 @@ function displayList(listArticles){
 }
 
 
+const searchInput = document.getElementById('countries');
+const searchButton = document.getElementById('searchButton');
+
+searchButton.addEventListener('search', function() {
+  // Get the search term from the input
+  const searchInput = searchInput.value;
+
+  // Display the search term in the console
+  console.log(countrie);
+});
+
+
+
     // Affiche les résultats
     //console.log(data);

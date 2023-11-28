@@ -1,14 +1,11 @@
-let country = 'de'
-let category = "general";
-
-getNews(country, category)
+getNews('fr', 'general', 5)
 
 // Importe le module `fetch`
-async function  getNews (country, category) {
+async function  getNews (country, category, articlesCount) {
+
     // Définit l'URL de la requête
     // const url = 'https://newsapi.org/v2/top-headlines?country=fr&apiKey=649cd1a3c1414df0b5122d5ce6fb6ab2';
     let url = `https://newsapi.org/v2/top-headlines?`
-    
     // adapter la requête API en fonction de l'input de l'utilisateur
     url += `country=${country}&`
     if (category !== 'general'){
@@ -18,20 +15,16 @@ async function  getNews (country, category) {
 
     // Exécute la requête HTTP
     const response = await fetch(url);
-
-    console.log(response)
     // Convertit la réponse en JSON
     let data = await response.json();
-    console.log(data);
-    console.log(data.articles);
     
     // afficher dans le HTML
-    displayList(data.articles)
+    displayList(data.articles, articlesCount)
 
 }
 
 // afficher ça dans le HTML
-function displayList(listArticles){
+function displayList(listArticles, articlesCount){
     // sélectionner la liste
     let articlesHTML = document.getElementById("articlesList")
 
@@ -39,7 +32,7 @@ function displayList(listArticles){
     articlesHTML.innerHTML = "";
 
     // pour chaque article, on affiche son titre sur une nouvelle ligne de la liste des résultats
-    for(let i =0; i< 5;i++){
+    for(let i =0; i< articlesCount;i++){
         articlesHTML.innerHTML += `<li> TITRE : ${listArticles[i].title.split(" - ")[0]} <br> SOURCE : ${listArticles[i].author} </li>`;
         // articlesHTML.innerHTML += `<li> LIEN : ${listArticles[i].url} </li>`;
         }
@@ -54,12 +47,14 @@ searchButton.addEventListener('click', function() {
     const countryInput = document.getElementById('countries').value;
     // récupérer l'input "catégorie"
     const categoryInput = document.getElementById('categories').value;
+    // récupérer l'input "nombre d'articles à afficher"
+    const countInput = document.getElementById('articlesNumber').value;
 
     // on vérifie que l'élément a bien été récupéré
     console.log(countryInput);
     console.log(categoryInput);
 
     // afficher la liste des résultats en fonction de ces données
-    getNews(countryInput, categoryInput);
+    getNews(countryInput, categoryInput, countInput);
     
 });

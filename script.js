@@ -3,6 +3,23 @@ getNews('fr', 'general', 5)
 // Importe le module `fetch`
 async function  getNews (country, category, articlesCount) {
 
+    let url = buildURL(country, category)
+    
+    // Exécute la requête HTTP
+    const response = await fetch(url);
+    // Convertit la réponse en JSON
+    let data = await response.json();
+    
+    // afficher dans le HTML
+    displayList(data.articles, articlesCount)
+
+    // Méthode alternative avec ".then" :
+    fetch(url)
+        .then(resp => resp.json())
+        .then((data) => {displayList(data.articles, articlesCount)})
+}
+
+function buildURL(country, category) {
     // Définit l'URL de la requête
     // const url = 'https://newsapi.org/v2/top-headlines?country=fr&apiKey=649cd1a3c1414df0b5122d5ce6fb6ab2';
     let url = `https://newsapi.org/v2/top-headlines?`
@@ -13,14 +30,7 @@ async function  getNews (country, category, articlesCount) {
     }
     url += `apiKey=23ae4e8637224dbbb71b47ae3402dd65`;
 
-    // Exécute la requête HTTP
-    const response = await fetch(url);
-    // Convertit la réponse en JSON
-    let data = await response.json();
-    
-    // afficher dans le HTML
-    displayList(data.articles, articlesCount)
-
+    return url;
 }
 
 // afficher ça dans le HTML
@@ -40,7 +50,6 @@ function displayList(listArticles, articlesCount){
 
 // récupérer le bouton
 const searchButton = document.getElementById('searchBtn');
-
 
 searchButton.addEventListener('click', function() {
     // récupérer l'input "pays"

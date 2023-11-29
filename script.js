@@ -67,3 +67,5 @@ function displayList(listArticles, articlesCount){
         // articlesHTML.innerHTML += `<li> LIEN : ${listArticles[i].url} </li>`;
         }
 }
+
+

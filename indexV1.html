@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>News App</title>
+</head>
+<body>
+
+    <h1>The news you like, where you need...</h1>
+
+    <div class="searchInputs">
+        <h2>Filtres</h2>
+        <label for="countries">Pays :</label> <br>
+        <select id="countries" name="countries">
+            <option value="fr">France</option>
+            <option value="de">Allemagne</option>
+            <option value="be">Belgique</option>
+            <option value="ie">Irlande</option>
+            <option value="it">Italie</option>
+            <option value="gb">Royaume-Uni</option>
+            <option value="ch">Suisse</option>
+            <option value="us">USA</option>
+        </select> <br>
+        <br><label for="categories">Catégorie :</label> <br>
+        <select id="categories" name="categories">
+            <option value="general">Général</option>
+            <option value="business">Business</option>
+            <option value="entertainment">Divertissement</option>
+            <option value="health">Santé</option>
+            <option value="science">Science</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Tech</option>
+        </select> <br>
+        <br><label for="articlesNumber">Nombre d'articles à afficher :</label> <br>
+        <select id="articlesNumber" name="articlesNumber">
+            <option value=5>5 articles</option>
+            <option value=10>10 articles</option>
+        </select> <br>
+        <br><button type="button" id="searchBtn">Search</button>   
+    
+    
+    </div>
+
+
+    <div class="results"></div>
+    <h2>Résultats de votre recherche :</h2>
+    <ol id="articlesList">
+        <li class="article">
+            <div class="titre">Titre : tretretregfsd</div>
+            <div class="auteur">Auteur: fdsf</div>
+            <div class="date">Date: 00/00/0000</div> <br>
+        </li>
+        <li class="article">
+            <div class="titre">Titre : tretretregfsd</div>
+            <div class="auteur">Auteur: fdsf</div>
+            <div class="date">Date: 00/00/0000</div> <br>
+        </li>
+        <li class="article">
+            <div class="titre">Titre : tretretregfsd</div>
+            <div class="auteur">Auteur: fdsf</div>
+            <div class="date">Date: 00/00/0000</div>
+        </li>
+    </ol>
+
+    <!-- <button>Search</button> -->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

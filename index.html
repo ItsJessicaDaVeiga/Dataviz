@@ -3,70 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
     <link rel="stylesheet" href="style.css">
     <title>News App</title>
 </head>
 <body>
 
-    <h1>The news you like, where you need...</h1>
+    <div class="titre1">ADA News</div>
+    <div id="slogan">The news you like, where you need...</div>
 
-    <div class="searchInputs">
-        <h2>Filtres</h2>
-        <label for="countries">Pays :</label> <br>
-        <select id="countries" name="countries">
-            <option value="fr">France</option>
-            <option value="de">Allemagne</option>
-            <option value="be">Belgique</option>
-            <option value="ie">Irlande</option>
-            <option value="it">Italie</option>
-            <option value="gb">Royaume-Uni</option>
-            <option value="ch">Suisse</option>
-            <option value="us">USA</option>
-        </select> <br>
-        <br><label for="categories">Catégorie :</label> <br>
-        <select id="categories" name="categories">
-            <option value="general">Général</option>
-            <option value="business">Business</option>
-            <option value="entertainment">Divertissement</option>
-            <option value="health">Santé</option>
-            <option value="science">Science</option>
-            <option value="sports">Sports</option>
-            <option value="technology">Tech</option>
-        </select> <br>
-        <br><label for="articlesNumber">Nombre d'articles à afficher :</label> <br>
-        <select id="articlesNumber" name="articlesNumber">
-            <option value=5>5 articles</option>
-            <option value=10>10 articles</option>
-        </select> <br>
-        <br><button type="button" id="searchBtn">Search</button>   
+    <div>
+
+        <div class="titre2">Filtres</div>
+        <div class="searchInputs pure-g">
+            <div class="pure-u-1-5">
+            <label for="countries">Pays :</label>
+            <select id="countries" name="countries">
+                <option value="fr">France</option>
+                <option value="de">Allemagne</option>
+                <option value="be">Belgique</option>
+                <option value="ie">Irlande</option>
+                <option value="it">Italie</option>
+                <option value="gb">Royaume-Uni</option>
+                <option value="ch">Suisse</option>
+                <option value="us">USA</option>
+            </select>
+        </div>
+        <div class="pure-u-1-5">
+            <label for="categories">Catégorie :</label>
+            <select id="categories" name="categories">
+                <option value="general">Général</option>
+                <option value="business">Business</option>
+                <option value="entertainment">Divertissement</option>
+                <option value="health">Santé</option>
+                <option value="science">Science</option>
+                <option value="sports">Sports</option>
+                <option value="technology">Tech</option>
+            </select>
+        </div>
+        <div class="pure-u-1-3">
+            <label for="articlesNumber">Nombre d'articles à afficher :</label>
+            <select id="articlesNumber" name="articlesNumber">
+                <option value=5>5 articles</option>
+                <option value=10>10 articles</option>
+            </select>
+        </div>
+        <div class="pure-u-1-4">
+            <button id="searchBtn" class="pure-button pure-button-primary button-search">Search</button>   
+        </div>
+    </div>
     
     
+    <div class="results">
+
+        <div class="titre2">Résultats de votre recherche :</div>
+        <div id="articlesList">
+        </div>
     </div>
 
-
-    <div class="results"></div>
-    <h2>Résultats de votre recherche :</h2>
-    <ol id="articlesList">
-        <li class="article">
-            <div class="titre">Titre : tretretregfsd</div>
-            <div class="auteur">Auteur: fdsf</div>
-            <div class="date">Date: 00/00/0000</div> <br>
-        </li>
-        <li class="article">
-            <div class="titre">Titre : tretretregfsd</div>
-            <div class="auteur">Auteur: fdsf</div>
-            <div class="date">Date: 00/00/0000</div> <br>
-        </li>
-        <li class="article">
-            <div class="titre">Titre : tretretregfsd</div>
-            <div class="auteur">Auteur: fdsf</div>
-            <div class="date">Date: 00/00/0000</div>
-        </li>
-    </ol>
-
-    <!-- <button>Search</button> -->
-
-
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

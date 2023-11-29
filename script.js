@@ -65,8 +65,8 @@ function displayList(listArticles, articlesCount){
         articlesHTML.innerHTML += `<div class="article">
             <div class="titre pure-g pure-u-5-5">${listArticles[i].title.split(" - ")[0]}</div>
             <div class="details pure-g">
-                <div class="auteur pure-u-3-5">${listArticles[i].author}</div>
-                <a class="hyperlink pure-u-1-5" href=${listArticles[i].url}>Accéder à l'article</a>
+                <div class="auteur pure-u-7-8">${listArticles[i].author}</div>
+                <a class="hyperlink pure-u-1-8" href=${listArticles[i].url}>Accéder à l'article</a>
             </div>
         </div>`
 

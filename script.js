@@ -73,3 +73,5 @@ function displayList(listArticles, articlesCount){
  
     }
 }
+
+

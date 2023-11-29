@@ -11,10 +11,6 @@ searchButton.addEventListener('click', function() {
     // récupérer l'input "nombre d'articles à afficher"
     const countInput = document.getElementById('articlesNumber').value;
 
-    // on vérifie que l'élément a bien été récupéré
-    console.log(countryInput);
-    console.log(categoryInput);
-
     // afficher la liste des résultats en fonction de ces données
     getNews(countryInput, categoryInput, countInput);
     
@@ -23,6 +19,7 @@ searchButton.addEventListener('click', function() {
 
 async function  getNews (country, category, articlesCount) {
 
+    // Appeler la fonction qui assemble les morceaux de l'url
     let url = buildURL(country, category)
     
     // Exécute la requête HTTP
@@ -34,9 +31,9 @@ async function  getNews (country, category, articlesCount) {
     displayList(data.articles, articlesCount)
 
     // Méthode alternative avec ".then" :
-    fetch(url)
-        .then(resp => resp.json())
-        .then((data) => {displayList(data.articles, articlesCount)})
+    // fetch(url)
+    //     .then(resp => resp.json())
+    //     .then((data) => {displayList(data.articles, articlesCount)})
 }
 
 function buildURL(country, category) {
@@ -63,9 +60,18 @@ function displayList(listArticles, articlesCount){
 
     // pour chaque article, on affiche son titre sur une nouvelle ligne de la liste des résultats
     for(let i =0; i< articlesCount;i++){
-        articlesHTML.innerHTML += `<li> TITRE : ${listArticles[i].title.split(" - ")[0]} <br> SOURCE : ${listArticles[i].author} </li>`;
+        // articlesHTML.innerHTML += `<li> TITRE : ${listArticles[i].title.split(" - ")[0]} <br> SOURCE : ${listArticles[i].author} </li>`;
         // articlesHTML.innerHTML += `<li> LIEN : ${listArticles[i].url} </li>`;
-        }
+        articlesHTML.innerHTML += `<div class="article">
+            <div class="titre pure-g pure-u-5-5">${listArticles[i].title.split(" - ")[0]}</div>
+            <div class="details pure-g">
+                <div class="auteur pure-u-3-5">${listArticles[i].author}</div>
+                <a class="hyperlink pure-u-1-5" href=${listArticles[i].url}>Accéder à l'article</a>
+            </div>
+        </div>`
+
+ 
+    }
 }
 
 

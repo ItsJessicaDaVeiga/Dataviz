@@ -1,47 +1,9 @@
+body {
+    background-color: lightgrey;
+    margin: 10px;
+}
 
-#body{
+h1 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: gray;
-    background-image:url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.freepik.com%2Ffree-vector%2Frealistic-news-studio-background_23-2149985612.jpg%3Fw%3D2000&f=1&nofb=1&ipt=0f844ba50609739cf5fa6882d8ee8d2d755cd2708bbff8ee949795360f06cf18&ipo=images ) ;
-    
 }
-
-
-
-
-#clock {
-    color: red;
-}
-
-.leaf{
-    background-color: green;
-    height: 40px;
-    width: 40px;
-    transform: rotate(20deg);
-    border-radius: 250px 0;
-
-    position: absolute;    
-
-    animation-name: fall;
-    /* animation-delay: 1s; */
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fall{
-    From{
-        transform: translateY(0px) rotate(0deg);
-        background-color: green;
-    }
-    To{
-        transform: translateY(150px) rotate(40deg);
-        background-color: black;
-    }
-  }
-  
